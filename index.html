@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Practical 14</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin: auto;
+            align-items: center;
+            background-color: gray;
+        }
+
+        .container {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 100%;
+            text-align: center;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            background-color: yellow;
+            color: black;
+        }
+
+        button:disabled {
+            background-color: rgb(236, 236, 161);
+            color: rgb(100, 99, 99);
+        }
+
+        .dec {
+            position: absolute;
+            left: 40%;
+            top: 15%;
+        }
+
+        .inc {
+            position: absolute;
+            right: 40%;
+            top: 15%;
+        }
+
+        button:hover {
+            background-color: greenyellow;
+            color: grey;
+        }
+
+        h2 {
+            color: yellow;
+            font-size: 45px;
+            position: absolute;
+            left: 49.5%;
+            top: 11%;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: white;
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>COUNTER</h1>
+
+    <div="container">
+        <button class="inc" onclick="increment()">+</button>
+        <h2 id="counting"></h2>
+        <button id="decc" class="dec" onclick="decrement()">-</button>
+    </div>
+
+    <script>
+        var data = 0;
+        var bt = document.getElementById("decc");
+        bt.disabled = true;
+        document.getElementById("counting").innerText = data;
+        function increment() {
+            var bt = document.getElementById("decc");
+            bt.disabled = false;
+            data = data + 1;
+            document.getElementById("counting").innerText = data;
+        }
+        function decrement() {
+            var bt = document.getElementById("decc");
+            data = data - 1;
+            document.getElementById("counting").innerText = data;
+            if (data <= 0) {
+                bt.disabled = true;
+            }
+        }
+    </script>
+</body>
+
+</html>
